@@ -76,7 +76,7 @@ export default function TopNav() {
             <Link
               key={it.href}
               href={it.href}
-              className={`serif text-2xl py-2.5 transition ${isActive(it.href) ? "text-[var(--color-accent)] italic" : "text-[var(--color-ink)]"}`}
+              className={`serif text-2xl py-3 border-b border-[var(--color-line)] transition ${isActive(it.href) ? "text-[var(--color-accent)] italic" : "text-[var(--color-ink)]"}`}
             >
               {it.label}
             </Link>
