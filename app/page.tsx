@@ -88,8 +88,10 @@ export default function Home() {
             const wide = i % 3 === 0;
             return (
               <Link key={a.slug} href={`/catalogus/${a.slug}`} className={`block ${wide ? "md:col-span-6" : "md:col-span-3"}`}>
-                <div className="relative h-[320px] md:h-[420px] bg-black overflow-hidden mb-4">
-                  <Image src={a.images[0]} alt={`${a.title} door ${a.artist}`} fill sizes={wide ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"} className="object-cover" />
+                <div className="bg-[var(--color-paper)] p-2 mb-4 border border-[var(--color-line)] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.15)]">
+                  <div className="relative h-[320px] md:h-[420px] bg-black overflow-hidden">
+                    <Image src={a.images[0]} alt={`${a.title} door ${a.artist}`} fill sizes={wide ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"} className="object-cover" />
+                  </div>
                 </div>
                 <h3 className="serif text-xl font-medium m-0 mb-1">{a.title}</h3>
                 <p className="text-sm text-[var(--color-ink-soft)] m-0 mb-1">{a.artist} · {a.region}</p>

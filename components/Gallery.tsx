@@ -6,8 +6,10 @@ export default function Gallery({ images, title }: { images: string[]; title: st
   const [active, setActive] = useState(0);
   return (
     <div>
-      <div className="relative aspect-[4/5] overflow-hidden bg-black">
-        <Image src={images[active]} alt={`${title} — afbeelding ${active+1} van ${images.length}`} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" priority />
+      <div className="bg-[var(--color-paper)] p-3 border border-[var(--color-line)] shadow-[0_4px_16px_-6px_rgba(0,0,0,0.18)]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-black">
+          <Image src={images[active]} alt={`${title} — afbeelding ${active+1} van ${images.length}`} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" priority />
+        </div>
       </div>
       {images.length > 1 && (
         <div role="tablist" className="flex gap-3 mt-3.5 flex-wrap">

@@ -113,14 +113,16 @@ export default function CatalogFilters({ artworks }: { artworks: Artwork[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 pb-20">
           {list.map((a) => (
             <Link key={a.slug} href={`/catalogus/${a.slug}`} className="block group">
-              <div className="relative aspect-[4/5] bg-black overflow-hidden mb-3.5">
-                <Image src={a.images[0]} alt={`${a.title} — ${a.artist}, ${a.region}`} fill sizes="(max-width:768px)100vw,33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                <span className="absolute top-3 left-3 bg-[var(--color-paper)]/95 text-[var(--color-ink)] text-[10px] uppercase tracking-[0.18em] font-semibold px-2.5 py-1.5 backdrop-blur-sm shadow-[0_2px_8px_-2px_rgba(0,0,0,0.25)]">{a.category}</span>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                  <div className="text-white">
-                    <p className="text-[10px] tracking-widest uppercase text-white/70 m-0 mb-1.5">{a.year} · {a.dimensions}</p>
-                    <p className="text-sm text-white/90 m-0 mb-3 leading-snug line-clamp-2">{a.materials}</p>
-                    <span className="serif italic text-base border-b border-white/70 pb-0.5">Bekijk werk →</span>
+              <div className="bg-[var(--color-paper)] p-2 mb-3.5 border border-[var(--color-line)] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.15)]">
+                <div className="relative aspect-[4/5] bg-black overflow-hidden">
+                  <Image src={a.images[0]} alt={`${a.title} — ${a.artist}, ${a.region}`} fill sizes="(max-width:768px)100vw,33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <span className="absolute top-3 left-3 bg-[var(--color-paper)]/95 text-[var(--color-ink)] text-[10px] uppercase tracking-[0.18em] font-semibold px-2.5 py-1.5 backdrop-blur-sm shadow-[0_2px_8px_-2px_rgba(0,0,0,0.25)]">{a.category}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                    <div className="text-white">
+                      <p className="text-[10px] tracking-widest uppercase text-white/70 m-0 mb-1.5">{a.year} · {a.dimensions}</p>
+                      <p className="text-sm text-white/90 m-0 mb-3 leading-snug line-clamp-2">{a.materials}</p>
+                      <span className="serif italic text-base border-b border-white/70 pb-0.5">Bekijk werk →</span>
+                    </div>
                   </div>
                 </div>
               </div>
