@@ -9,10 +9,6 @@ export default function Home() {
   return (
     <>
       <section className="max-w-[1480px] mx-auto px-[clamp(20px,4vw,64px)] pt-10 md:pt-16 pb-20 md:pb-28">
-        <div className="flex justify-between items-baseline mb-8 md:mb-12">
-          <span className="eyebrow">Galerie · Amsterdam</span>
-          <span className="text-xs tracking-widest uppercase text-[var(--color-ink-soft)] hidden md:inline">Atelier · Voorjaar 2026</span>
-        </div>
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-16 items-center">
           <div>
             <h1 className="serif font-normal leading-[0.95] tracking-tight m-0 text-[clamp(2.2rem,5.5vw,5.5rem)]">
