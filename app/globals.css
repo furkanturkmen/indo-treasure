@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FAF6EC;
+  --color-paper: #FFFFFF;
+  --color-ink: #1F1D14;
+  --color-ink-soft: #5C5740;
+  --color-accent: #5E5D2D;
+  --color-accent-2: #982727;
+  --color-gold: #F2BE00;
+  --color-earth: #744D26;
+  --color-line: rgba(31, 29, 20, 0.12);
+  --color-table: #BFA988;
+  --font-serif: var(--font-serif-next), 'Fraunces', Georgia, serif;
+  --font-sans: var(--font-sans-next), 'Inter', system-ui, sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #1A1812;
+  --color-paper: #25221B;
+  --color-ink: #F2EEDF;
+  --color-ink-soft: #A8A088;
+  --color-accent: #C5C28A;
+  --color-accent-2: #E58A8A;
+  --color-line: rgba(242, 238, 223, 0.14);
+}
+
+::selection { background: var(--color-accent-2); color: var(--color-bg); }
+::-moz-selection { background: var(--color-accent-2); color: var(--color-bg); }
+
+html { background: var(--color-bg); }
+body { color: var(--color-ink); }
+body {
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23744D26' stroke-width='1' opacity='0.07' stroke-linecap='round'%3E%3Cpath d='M0 60 C 20 30 50 30 60 60 C 70 35 100 35 110 60 C 120 35 150 35 160 60 C 170 35 200 35 200 60'/%3E%3Cpath d='M0 130 C 20 100 50 100 60 130 C 70 105 100 105 110 130 C 120 105 150 105 160 130 C 170 105 200 105 200 130'/%3E%3Ccircle cx='30' cy='45' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='80' cy='45' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='130' cy='45' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='180' cy='45' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='30' cy='115' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='80' cy='115' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='130' cy='115' r='1.4' fill='%23744D26' stroke='none'/%3E%3Ccircle cx='180' cy='115' r='1.4' fill='%23744D26' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+[data-theme="dark"] body {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23F2BE00' stroke-width='1' opacity='0.10' stroke-linecap='round'%3E%3Cpath d='M0 60 C 20 30 50 30 60 60 C 70 35 100 35 110 60 C 120 35 150 35 160 60 C 170 35 200 35 200 60'/%3E%3Cpath d='M0 130 C 20 100 50 100 60 130 C 70 105 100 105 110 130 C 120 105 150 105 160 130 C 170 105 200 105 200 130'/%3E%3Ccircle cx='30' cy='45' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='80' cy='45' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='130' cy='45' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='180' cy='45' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='30' cy='115' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='80' cy='115' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='130' cy='115' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3Ccircle cx='180' cy='115' r='1.4' fill='%23F2BE00' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+}
+.serif { font-family: var(--font-serif); letter-spacing: -0.005em; }
+.eyebrow {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-accent-2); margin-bottom: 16px;
+}
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; border: 1px solid transparent; cursor: pointer; transition: all .2s; text-decoration: none; }
+.btn-primary { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); }
+.btn-primary:hover { background: var(--color-accent-2); border-color: var(--color-accent-2); }
+.btn-ghost { background: transparent; color: var(--color-ink); border-color: var(--color-ink); }
+.btn-ghost:hover { background: var(--color-ink); color: var(--color-bg); }
+
+/* See app.jsx + styles.css in the prototype for the full set of utilities;
+   this file ships the design tokens. Use Tailwind utility classes for layout,
+   and this file's utilities for typography. */
+
+.manifest-aurora { position: relative; isolation: isolate; }
+.manifest-aurora::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    radial-gradient(85% 80% at 15% 20%, rgba(94,93,45,0.45), transparent 100%),
+    radial-gradient(80% 75% at 85% 15%, rgba(116,77,38,0.42), transparent 100%),
+    radial-gradient(90% 80% at 75% 95%, rgba(152,39,39,0.35), transparent 100%),
+    radial-gradient(75% 75% at 25% 90%, rgba(94,93,45,0.38), transparent 100%),
+    radial-gradient(60% 60% at 50% 50%, rgba(116,77,38,0.22), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0,0,0,0.15) 100px,
+            rgba(0,0,0,0.40) 200px,
+            rgba(0,0,0,0.75) 320px,
+            #000 420px,
+            #000 calc(100% - 420px),
+            rgba(0,0,0,0.75) calc(100% - 320px),
+            rgba(0,0,0,0.40) calc(100% - 200px),
+            rgba(0,0,0,0.15) calc(100% - 100px),
+            transparent 100%);
+          mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0,0,0,0.15) 100px,
+            rgba(0,0,0,0.40) 200px,
+            rgba(0,0,0,0.75) 320px,
+            #000 420px,
+            #000 calc(100% - 420px),
+            rgba(0,0,0,0.75) calc(100% - 320px),
+            rgba(0,0,0,0.40) calc(100% - 200px),
+            rgba(0,0,0,0.15) calc(100% - 100px),
+            transparent 100%);
+  pointer-events: none;
+}
+
+@keyframes marquee-x {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+.marquee-track { animation: marquee-x 60s linear infinite; will-change: transform; }
+.marquee-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
