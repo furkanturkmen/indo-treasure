@@ -46,7 +46,9 @@ export default function TopNav() {
         </nav>
         <div className="flex items-center gap-2 md:gap-3 md:justify-self-end">
           <ThemeToggle />
-          <Link href="/catalogus" className="hidden md:inline-block text-sm font-medium border-b border-[var(--color-ink)] pb-0.5 hover:text-[var(--color-accent-2)] hover:border-[var(--color-accent-2)]">Bekijk collectie →</Link>
+          {!pathname.startsWith("/catalogus") && (
+            <Link href="/catalogus" className="hidden md:inline-block text-sm font-medium border-b border-[var(--color-ink)] pb-0.5 hover:text-[var(--color-accent-2)] hover:border-[var(--color-accent-2)]">Bekijk collectie →</Link>
+          )}
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
@@ -79,7 +81,6 @@ export default function TopNav() {
               {it.label}
             </Link>
           ))}
-          <Link href="/catalogus" className="mt-3 text-sm border-b border-[var(--color-ink)] pb-0.5 self-start">Bekijk collectie →</Link>
         </nav>
       </div>
     </header>
