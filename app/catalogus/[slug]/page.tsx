@@ -6,6 +6,7 @@ import { ARTWORKS, getArtwork, relatedArtworks } from "@/lib/artworks";
 import { formatEUR } from "@/lib/format";
 import Gallery from "@/components/Gallery";
 import RequestButton from "@/components/RequestButton";
+import Frame from "@/components/Frame";
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -73,12 +74,12 @@ export default async function ArtworkPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
             {related.map((r) => (
               <Link key={r.slug} href={`/catalogus/${r.slug}`} className="block group">
-                <div className="bg-[var(--color-paper)] p-2 mb-3.5 border border-[var(--color-line)] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.15)]">
+                <Frame className="mb-3.5">
                   <div className="relative aspect-[4/5] bg-black overflow-hidden">
                     <Image src={r.images[0]} alt={r.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                     <span className="absolute top-3 left-3 bg-[var(--color-paper)]/95 text-[var(--color-ink)] text-[10px] uppercase tracking-[0.18em] font-semibold px-2.5 py-1.5 backdrop-blur-sm shadow-[0_2px_8px_-2px_rgba(0,0,0,0.25)]">{r.category}</span>
                   </div>
-                </div>
+                </Frame>
                 <h3 className="serif text-xl font-medium m-0 mb-1">{r.title}</h3>
                 <p className="text-sm text-[var(--color-ink-soft)] m-0">{r.artist} · {r.region}</p>
                 <p className="serif italic text-[var(--color-accent)] m-0 mt-1">{formatEUR(r.price)}</p>

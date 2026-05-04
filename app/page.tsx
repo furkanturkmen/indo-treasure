@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ARTWORKS } from "@/lib/artworks";
 import { formatEUR } from "@/lib/format";
+import Frame from "@/components/Frame";
 
 export default function Home() {
   const featured = ARTWORKS.slice(0, 6);
@@ -88,11 +89,11 @@ export default function Home() {
             const wide = i % 3 === 0;
             return (
               <Link key={a.slug} href={`/catalogus/${a.slug}`} className={`block ${wide ? "md:col-span-6" : "md:col-span-3"}`}>
-                <div className="bg-[var(--color-paper)] p-2 mb-4 border border-[var(--color-line)] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.15)]">
+                <Frame className="mb-4">
                   <div className="relative h-[320px] md:h-[420px] bg-black overflow-hidden">
                     <Image src={a.images[0]} alt={`${a.title} door ${a.artist}`} fill sizes={wide ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"} className="object-cover" />
                   </div>
-                </div>
+                </Frame>
                 <h3 className="serif text-xl font-medium m-0 mb-1">{a.title}</h3>
                 <p className="text-sm text-[var(--color-ink-soft)] m-0 mb-1">{a.artist} · {a.region}</p>
                 <p className="serif italic text-[var(--color-accent)] m-0">{formatEUR(a.price)}</p>

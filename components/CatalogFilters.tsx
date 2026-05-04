@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Artwork } from "@/lib/artworks";
+import Frame from "@/components/Frame";
 import { CATEGORIES, REGIONS, PRICE_RANGES } from "@/lib/artworks";
 import { formatEUR } from "@/lib/format";
 
@@ -113,7 +114,7 @@ export default function CatalogFilters({ artworks }: { artworks: Artwork[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 pb-20">
           {list.map((a) => (
             <Link key={a.slug} href={`/catalogus/${a.slug}`} className="block group">
-              <div className="bg-[var(--color-paper)] p-2 mb-3.5 border border-[var(--color-line)] shadow-[0_2px_8px_-4px_rgba(0,0,0,0.15)]">
+              <Frame className="mb-3.5">
                 <div className="relative aspect-[4/5] bg-black overflow-hidden">
                   <Image src={a.images[0]} alt={`${a.title} — ${a.artist}, ${a.region}`} fill sizes="(max-width:768px)100vw,33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                   <span className="absolute top-3 left-3 bg-[var(--color-paper)]/95 text-[var(--color-ink)] text-[10px] uppercase tracking-[0.18em] font-semibold px-2.5 py-1.5 backdrop-blur-sm shadow-[0_2px_8px_-2px_rgba(0,0,0,0.25)]">{a.category}</span>
@@ -125,7 +126,7 @@ export default function CatalogFilters({ artworks }: { artworks: Artwork[] }) {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Frame>
               <h3 className="serif text-xl font-medium m-0 mb-1">{a.title}</h3>
               <p className="text-sm text-[var(--color-ink-soft)] m-0 mb-1">{a.artist} · {a.region}</p>
               <p className="serif italic text-[var(--color-accent)] text-base m-0">{formatEUR(a.price)}</p>
